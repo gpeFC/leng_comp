@@ -9,7 +9,7 @@ Facultad de Ciencias, UAEM.
 >>Default Argument Values<<
 """
 
-def some_function(onevalue, other_one, with_default="ok", next="still with value", the_last="I nedd a default too"):
+def some_function(onevalue, other_one, with_default="ok", next = "still with value", the_last="I nedd a default too"):
     print onevalue
     print other_one
     print with_default
