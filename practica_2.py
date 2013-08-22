@@ -12,7 +12,7 @@ Facultad de Ciencias, UAEM.
 def some_function(onevalue, other_one, with_default="ok", next="still with value", the_last="I nedd a default too"):
     print onevalue
     print other_one
-    print with_dafault
+    print with_default
 
 if __name__ == "__main__":
     some_function("hi", "there")
