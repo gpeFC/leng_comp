@@ -18,10 +18,10 @@ archivo = open("ejemplo.csv", "r")
 
 renglones = csv.reader(archivo, delimiter=",", quotechar="|")
 for renglon in renglones:
-    print renglon 
+    print (renglon) 
 
 # noten la diferencia.
 print "\n\n\n"
 otro = open("ejemplo.csv", "r")
 for renglon in otro:
-    print renglon, 
+    print (renglon),
