@@ -36,6 +36,5 @@ def square_check(matrix):
     return 0
 
 mi_matriz = read_matrix(raw_input("nombre del archivo: "))
-if square_check(mi_matriz):
-    for row in mi_matriz:
-        print (row)
+for row in mi_matriz:
+    print (row)
