@@ -14,7 +14,7 @@ import csv
 
 
 # Obtenemos objeto de archivo.
-archivo = = open("ejemplo.csv", "r")
+archivo = open("ejemplo.csv", "r")
 
 renglones = csv.reader(archivo, delimiter=",", quotechar="|")
 for renglon in renglones:
