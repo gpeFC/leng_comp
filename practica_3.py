@@ -39,3 +39,9 @@ if __name__ == "__main__":
     f2.write("4 line\n");
     f2.write("5 line\n");
     f2.close()
+    
+    print "\nor 'stringify' objects:"
+    
+    # Look at this.
+    dict = {'a': [1, 2, 3, 4], 'b': "hola!", 'c': 3.1416}
+    print pickle.dumps(dict)
