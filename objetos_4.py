@@ -35,6 +35,34 @@ def square_check(matrix):
             sys.exit("Not square matrix.")
     return 0
 
-mi_matriz = read_matrix(raw_input("nombre del archivo: "))
-for row in mi_matriz:
-    print (row)
+def unit_check(matrix):
+    if square_check(matrix):
+        # Ok to continue.
+        n_rows = matrix.__len__()
+        for i in range(n_rows):
+            for j in range(n_rows):
+                if i == j:
+                    if matrix[i][j] != 1:
+                        return False
+                else:
+                    if matrix[i][j] != 0:
+                        return False
+    return True
+
+def zero_check(matrix):
+    if square_check(matrix):
+    # Ok to continue.
+    n_rows = matrix.__len__()
+    for i in range(n_rows):
+        for j in range(n_rows):
+            if matrix[i][j] != 0:
+                return False
+    return True
+
+
+if __name__ == "__main___":
+    archivo = sys.argv[1]
+    mat = read_matrix(archivo)
+    print("this matrix is: ")
+    if 
+    
