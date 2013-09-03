@@ -17,7 +17,7 @@ class MyQueue:
 		"""Constructor que crea e inicializa el nuevo objeto 'Queue' vacío y también 
 			inicializa una variable que contendra su longitud actual."""
 		self.__my_queue = []
-		self.__dim_queue = len(self.my_queue)
+		self.__dim_queue = len(self.__my_queue)
 
 	def __queue_empty(self, dim_queue):
 		"""Método que verifica si la estructura 'Queue' actual es vacía o no."""
