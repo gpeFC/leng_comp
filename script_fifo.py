@@ -19,7 +19,7 @@ class MyQueue:
 		self.my_queue = []
 		self.dim_queue = len(self.my_queue)
 
-	def __queue_empty(self, dim_q):
+	def queue_empty(self, dim_q):
 		"""Método que verifica si la estructura 'Queue' actual es vacía o no."""
 		if dim_q == 0:
 			return True
@@ -33,7 +33,7 @@ class MyQueue:
 
 	def pop_queue(self):
 		"""Método que permite extraer un elemento de la estructura 'Queue' actual si es no vacía."""
-		if self.__queue_empty(self.dim_queue):
+		if self.queue_empty(self.dim_queue):
 			print("La estructura 'Queue' actual está vacía...")
 			return None
 		else:
