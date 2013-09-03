@@ -33,7 +33,7 @@ class MyQueue:
 
 	def pop_queue(self):
 		"""Método que permite extraer un elemento de la estructura 'Queue' actual si es no vacía."""
-		if __queue_empty(self.dim_queue):
+		if self.__queue_empty(self.dim_queue):
 			print("La estructura 'Queue' actual está vacía...")
 			return None
 		else:
