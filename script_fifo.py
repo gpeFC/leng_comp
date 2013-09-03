@@ -83,7 +83,9 @@ def main():
 				elemento = tad_queue.pop_queue()
 				if elemento != None:
 					print "Se extrajo el elemento: ", elemento
-				continuar = raw_input("El elemento fue extraido con exito, presiona <Enter> para continuar...")
+					continuar = raw_input("El elemento fue extraido con exito, presiona <Enter> para continuar...")
+				else:
+					continuar = raw_input("Presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
 				print "\tFallo en la ejecución de la acción actual."
