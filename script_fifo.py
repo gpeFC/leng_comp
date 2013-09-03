@@ -9,7 +9,7 @@
 ========================================================================"""
 
  	# Modulos importados.
- import os
+import os
 
 class MyQueue:
 	"""Estructura FIFO implementada con una lista."""
