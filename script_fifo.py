@@ -72,7 +72,7 @@ def main():
 			try:
 				os.system("clear")
 				print("\t\tPUSH\n\n")
-				nuevo_elemento = input("Ingresa el nuevo elemento a ingresar al tad queue[para ingresar texto, excribirlo entre comillas('')]: ")
+				nuevo_elemento = input("Introduce el nuevo elemento a ingresar al tad queue[para ingresar texto, excribirlo entre comillas('')]: ")
 				tad_queue.push_queue(nuevo_elemento)
 				continuar = raw_input("El nuevo elemento fue ingresado con exito, presiona <Enter> para continuar...")
 			except:
