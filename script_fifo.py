@@ -67,7 +67,7 @@ def main():
 		print("\tC) Mostar elementos actuales en el TAD 'Queue'.")
 		print("\tD) Salir del script.\n")
 		opc_menu = raw_input("Indica la opción a realizar: ")
-		opc_menu = opc_menu.lower()
+		opc_menu = opc_menu.upper()
 		if opc_menu  == "A":
 			try:
 				os.system("clear")
