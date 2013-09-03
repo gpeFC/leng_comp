@@ -50,9 +50,7 @@ class MyQueue:
 		else:
 			print()
 			for item in range(dim_queue):
-				print ("|",)
-				print (self.my_queue[item],)
-				print("|")
+				print ("|", self.my_queue[item], "|",)
 			print()
 
 def main():
