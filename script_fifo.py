@@ -20,7 +20,7 @@ class MyQueue:
 
 	def __queue_empty(self, dim_queue):
 		"""Método que verifica si la estructura 'Queue' actual es vacía o no."""
-		if dim_queue == 0:
+		if dim_queue == 0: # Condición para cotejar que la longitud de la Queue vacía sea cero. 
 			return True
 		else:
 			return False
