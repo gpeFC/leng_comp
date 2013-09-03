@@ -91,17 +91,17 @@ def main():
 			except:
 				os.system("clear")
 				print("\tFallo en la ejecución de la acción actual.")
-				continuar = raw_input("Presiona <Enter> para continuar..."
+				continuar = raw_input("Presiona <Enter> para continuar...")
 		elif opc_menu == "C":
 			try:
 				os.system("clear")
 				print("\t\tVIEW\n\n")
 				tad_queue.view_elements()
-				continuar = raw_input("Presiona <Enter> para continuar..."
+				continuar = raw_input("Presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
 				print("\tFallo en la ejecución de la acción actual.")
-				continuar = raw_input("Presiona <Enter> para continuar..."
+				continuar = raw_input("Presiona <Enter> para continuar...")
 		elif opc_menu == "D":
 			try:
 				flag_exit = False:
@@ -109,16 +109,16 @@ def main():
 			except:
 				os.system("clear")
 				print("\tFallo en la ejecución de la acción actual.")
-				continuar = raw_input("Presiona <Enter> para continuar..."
+				continuar = raw_input("Presiona <Enter> para continuar...")
 		else:
 			try:
 				os.system("clear")
 				print("\tOpción invalida.")
-				continuar = raw_input("Presiona <Enter> para continuar..."
+				continuar = raw_input("Presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
 				print("\tFallo en la ejecución de la acción actual.")
-				continuar = raw_input("Presiona <Enter> para continuar..."
+				continuar = raw_input("Presiona <Enter> para continuar...")
 
 
 if __name__ == '__main__':
