@@ -16,42 +16,42 @@ class MyQueue:
 	def __init__(self):
 		"""Constructor que crea e inicializa el nuevo objeto 'Queue' vacío y también 
 			inicializa una variable que contendra su longitud actual."""
-		self.__my_queue = []
-		self.__dim_queue = len(self.__my_queue)
+		self.my_queue = []
+		self.dim_queue = len(self.my_queue)
 
-	def __queue_empty(self, dim_queue):
+	def __queue_empty(self, dim_q):
 		"""Método que verifica si la estructura 'Queue' actual es vacía o no."""
-		if dim_queue == 0:
+		if dim_q == 0:
 			return True
 		else:
 			return False
 
 	def push_queue(self, new_element):
 		"""Método que permite insertar un nuevo elemento a la estructura 'Queue' actual."""
-		self.__my_queue.append(new_element)
-		self.__dim_queue = len(self.__my_queue)
+		self.my_queue.append(new_element)
+		self.dim_queue = len(self.my_queue)
 
 	def pop_queue(self):
 		"""Método que permite extraer un elemento de la estructura 'Queue' actual si es no vacía."""
-		if __queue_empty(self.__dim_queue):
+		if __queue_empty(self.dim_queue):
 			print("La estructura 'Queue' actual está vacía...")
 			return None
 		else:
-			pop_element = self.__my_queue[:1]
-			self.__my_queue = self.__my_queue[1:]
-			self.__dim_queue = len(self.__my_queue)
+			pop_element = self.my_queue[:1]
+			self.my_queue = self.my_queue[1:]
+			self.dim_queue = len(self.my_queue)
 			return pop_element
 
 	def view_elements(self):
 		"""Método que pemite mostrar todos los elementos actuales contenidos 
 			en la estructura 'Queue' actual si no es vacía."""
-		if __queue_empty(self.__dim_queue):
+		if __queue_empty(self.dim_queue):
 			print("La estructura 'Queue' actual está vacía...")
 		else:
 			print()
-			for item in range(__dim_queue):
+			for item in range(dim_queue):
 				print ("|",)
-				print (self.__my_queue[item],)
+				print (self.my_queue[item],)
 				print("|")
 			print()
 
