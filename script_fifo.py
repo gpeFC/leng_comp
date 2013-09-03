@@ -79,7 +79,7 @@ def main():
 			except:
 				os.system("clear")
 				print("\tFallo en la ejecución de la acción actual.")
-				continuar = raw_input("Presiona <Enter> para continuar..."
+				continuar = raw_input("Presiona <Enter> para continuar...")
 		elif opc_menu == "B":
 			try:
 				os.system("clear")
