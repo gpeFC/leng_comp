@@ -36,7 +36,7 @@ class MyQueue:
 			print "La estructura 'Queue' actual está vacía..."
 			return None
 		else:
-			pop_element = self.my_queue[:1]
+			pop_element = self.my_queue[0]
 			self.my_queue = self.my_queue[1:]
 			self.dim_queue = len(self.my_queue)
 			return pop_element
