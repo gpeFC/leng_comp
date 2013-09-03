@@ -45,7 +45,7 @@ class MyQueue:
 	def view_elements(self):
 		"""Método que pemite mostrar todos los elementos actuales contenidos 
 			en la estructura 'Queue' actual si no es vacía."""
-		if __queue_empty(self.dim_queue):
+		if self.queue_empty(self.dim_queue):
 			print("La estructura 'Queue' actual está vacía...")
 		else:
 			print()
