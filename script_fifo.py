@@ -18,9 +18,9 @@ class MyQueue:
 		self.my_queue = []
 		self.dim_queue = len(self.my_queue)
 
-	def queue_empty(self, dim_q):
+	def queue_empty(self, dim_queue):
 		"""Método que verifica si la estructura 'Queue' actual es vacía o no."""
-		if dim_q == 0:
+		if dim_queue == 0:
 			return True
 		else:
 			return False
@@ -48,8 +48,8 @@ class MyQueue:
 			print "La estructura 'Queue' actual está vacía..."
 		else:
 			print 
-			for item in range(dim_queue):
-				print "|", self.my_queue[item], "|",
+			for item in self.my_queue:
+				print item, "|",
 			print 
 
 def main():
