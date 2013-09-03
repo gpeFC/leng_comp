@@ -74,8 +74,7 @@ def main():
 				print("\t\tPUSH\n\n")
 				nuevo_elemento = input("Ingresa el nuevo elemento a ingresar al tad queue: ")
 				tad_queue.push_queue(nuevo_elemento)
-				continuar = raw_input("El nuevo elemento fue ingresado con exito, presiona <Enter> \
-										para continuar...")
+				continuar = raw_input("El nuevo elemento fue ingresado con exito, presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
 				print("\tFallo en la ejecución de la acción actual.")
@@ -86,8 +85,7 @@ def main():
 				print("\t\tPOP\n\n")
 				elemento = tad_queue.pop_queue()
 				print("Se extrajo el elemento: ", elemento)
-				continuar = raw_input("El elemento fue extraido con exito, presiona <Enter> \
-									   para continuar...")
+				continuar = raw_input("El elemento fue extraido con exito, presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
 				print("\tFallo en la ejecución de la acción actual.")
