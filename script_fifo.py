@@ -5,7 +5,6 @@
 	Lenguajes y Compiladores.
 	Facultad de Ciencias, UAEM.
 						>>Clases y Objetos: FIFO<<
-	// ESTE SCRIPT ESTÁ IMPLEMENTADO EN PYTHON VERSION 3(Python v3). //
 ========================================================================"""
 
  	# Modulos importados.
@@ -34,7 +33,7 @@ class MyQueue:
 	def pop_queue(self):
 		"""Método que permite extraer un elemento de la estructura 'Queue' actual si es no vacía."""
 		if self.queue_empty(self.dim_queue):
-			print("La estructura 'Queue' actual está vacía...")
+			print "La estructura 'Queue' actual está vacía..."
 			return None
 		else:
 			pop_element = self.my_queue[:1]
@@ -46,12 +45,12 @@ class MyQueue:
 		"""Método que pemite mostrar todos los elementos actuales contenidos 
 			en la estructura 'Queue' actual si no es vacía."""
 		if self.queue_empty(self.dim_queue):
-			print("La estructura 'Queue' actual está vacía...")
+			print "La estructura 'Queue' actual está vacía..."
 		else:
-			print()
+			print 
 			for item in range(dim_queue):
-				print ("|", self.my_queue[item], "|",)
-			print()
+				print "|", self.my_queue[item], "|",
+			print 
 
 def main():
 	"""Función principal del script."""
@@ -59,44 +58,44 @@ def main():
 	flag_exit = True
 	while flag_exit:
 		os.system("clear")
-		print("\t\t TAD FIFO con Listas...\n")
-		print("\tA) Agregar elemento al TAD 'Queue'.")
-		print("\tB) Extraer elemento del TAD 'Queue'.")
-		print("\tC) Mostar elementos actuales en el TAD 'Queue'.")
-		print("\tD) Salir del script.\n")
+		print "\t\t TAD FIFO con Listas...\n"
+		print "\tA) Agregar elemento al TAD 'Queue'."
+		print "\tB) Extraer elemento del TAD 'Queue'."
+		print "\tC) Mostar elementos actuales en el TAD 'Queue'."
+		print "\tD) Salir del script.\n"
 		opc_menu = raw_input("Indica la opción a realizar: ")
 		opc_menu = opc_menu.upper()
 		if opc_menu  == "A":
 			try:
 				os.system("clear")
-				print("\t\tPUSH\n\n")
+				print "\t\tPUSH\n\n"
 				nuevo_elemento = input("Introduce el nuevo elemento a ingresar al tad queue[para ingresar texto, excribirlo entre comillas('')]: ")
 				tad_queue.push_queue(nuevo_elemento)
 				continuar = raw_input("El nuevo elemento fue ingresado con exito, presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
-				print("\tFallo en la ejecución de la acción actual.")
+				print "\tFallo en la ejecución de la acción actual."
 				continuar = raw_input("Presiona <Enter> para continuar...")
 		elif opc_menu == "B":
 			try:
 				os.system("clear")
-				print("\t\tPOP\n\n")
+				print"\t\tPOP\n\n"
 				elemento = tad_queue.pop_queue()
-				print("Se extrajo el elemento: ", elemento)
+				print "Se extrajo el elemento: ", elemento
 				continuar = raw_input("El elemento fue extraido con exito, presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
-				print("\tFallo en la ejecución de la acción actual.")
+				print "\tFallo en la ejecución de la acción actual."
 				continuar = raw_input("Presiona <Enter> para continuar...")
 		elif opc_menu == "C":
 			try:
 				os.system("clear")
-				print("\t\tVIEW\n\n")
+				print "\t\tVIEW\n\n"
 				tad_queue.view_elements()
 				continuar = raw_input("Presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
-				print("\tFallo en la ejecución de la acción actual.")
+				print "\tFallo en la ejecución de la acción actual."
 				continuar = raw_input("Presiona <Enter> para continuar...")
 		elif opc_menu == "D":
 			try:
@@ -104,16 +103,16 @@ def main():
 				os.system("clear")
 			except:
 				os.system("clear")
-				print("\tFallo en la ejecución de la acción actual.")
+				print "\tFallo en la ejecución de la acción actual."
 				continuar = raw_input("Presiona <Enter> para continuar...")
 		else:
 			try:
 				os.system("clear")
-				print("\tOpción invalida.")
+				print "\tOpción invalida."
 				continuar = raw_input("Presiona <Enter> para continuar...")
 			except:
 				os.system("clear")
-				print("\tFallo en la ejecución de la acción actual.")
+				print "\tFallo en la ejecución de la acción actual."
 				continuar = raw_input("Presiona <Enter> para continuar...")
 
 
