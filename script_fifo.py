@@ -104,7 +104,7 @@ def main():
 				continuar = raw_input("Presiona <Enter> para continuar...")
 		elif opc_menu == "D":
 			try:
-				flag_exit = False:
+				flag_exit = False
 				os.system("clear")
 			except:
 				os.system("clear")
