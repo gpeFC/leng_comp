@@ -27,7 +27,7 @@ def separa_tokens(lista):
                 if idx_2 < (len(cadena)-1) and cadena[idx_2+1] != "a" and cadena[idx_2+1] != "A" and cadena[idx_2+1] != "b" and cadena[idx_2+1] != "B" and cadena[idx_2+1] != "c" and cadena[idx_2+1] != "C" and cadena[idx_2+1] != "d" and cadena[idx_2+1] != "D" and cadena[idx_2+1] != "e" and cadena[idx_2+1] != "E" and cadena[idx_2+1] != "f" and cadena[idx_2+1] != "F" and cadena[idx_2+1] != "g" and cadena[idx_2+1] != "G" and cadena[idx_2+1] != "h" and cadena[idx_2+1] != "H" and cadena[idx_2+1] != "i" and cadena[idx_2+1] != "I" and cadena[idx_2+1] != "j" and cadena[idx_2+1] != "J" and cadena[idx_2+1] != "k" and cadena[idx_2+1] != "K" and cadena[idx_2+1] != "l" and cadena[idx_2+1] != "L" and cadena[idx_2+1] != "m" and cadena[idx_2+1] != "M" and cadena[idx_2+1] != "n" and cadena[idx_2+1] != "N" and cadena[idx_2+1] != "o" and cadena[idx_2+1] != "O" and cadena[idx_2+1] != "p" and cadena[idx_2+1] != "P" and cadena[idx_2+1] != "q" and cadena[idx_2+1] != "Q" and cadena[idx_2+1] != "r" and cadena[idx_2+1] != "R" and cadena[idx_2+1] != "s" and cadena[idx_2+1] != "S" and cadena[idx_2+1] != "t" and cadena[idx_2+1] != "T" and cadena[idx_2+1] != "u" and cadena[idx_2+1] != "U" and cadena[idx_2+1] != "v" and cadena[idx_2+1] != "V" and cadena[idx_2+1] != "w" and cadena[idx_2+1] != "W" and cadena[idx_2+1] != "y" and cadena[idx_2+1]!= "Y" and cadena[idx_2+1] != "z" and cadena[idx_2+1] != "Z":
                     temp_lista.append(temp_token)
                     temp_token = ""
-            elif cadena[idx_2] == "+" or cadena[idx_2] == "-" or cadena[idx_2] == "*" or cadena[idx_2] == "/" or cadena[idx_2] == "^":
+            elif cadena[idx_2] == "=" or cadena[idx_2] == "+" or cadena[idx_2] == "-" or cadena[idx_2] == "*" or cadena[idx_2] == "/" or cadena[idx_2] == "^":
                 temp_lista.append(cadena[idx_2])
         temp_lista.append(temp_token)
         nueva_lista += temp_lista
@@ -63,6 +63,26 @@ def coteja_del(lista):
         else:
             return "Falta: ("
 
+def clasifica_tokens(lista):
+    del_lista = []
+    num_lista = []
+    var_lista = []
+    ope_lista = []
+    otros = []
+    for item in lista:
+        if item == "(" or item == ")":
+            del_lista.append(item)
+        elif item == "=" or item == "+" or item == "-" or item == "*" or item == "/" or item == "^":
+            ope_lista.append(item)
+        elif type(item) == int or type(item) == float:
+            num_lista.append(item)
+        elif item.isalpha() or item.isalnum():
+            var_lista.append(item)
+        else:
+            otros.append(item)
+    clasf_tokens = [("DEL", del_lista), ("OPE", ope_lista), ("NUM", num_lista), ("VAR", var_lista), ("OTR", otros)]
+    return clasf_tokens
+
 
 
 if __name__ == "__main__":
@@ -88,3 +108,7 @@ if __name__ == "__main__":
             print "Delimitadores Balanceados..."
         else:
             print bal_del
+    print 
+    clasf = clasifica_tokens(tokens_lista)
+    for item in clasf:
+        print item 
