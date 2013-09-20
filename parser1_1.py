@@ -83,6 +83,20 @@ def clasifica_tokens(lista):
     clasf_tokens = [("DEL", del_lista), ("OPE", ope_lista), ("NUM", num_lista), ("VAR", var_lista), ("OTR", otros)]
     return clasf_tokens
 
+def coteja_asig(lista):
+    if lista[1] == "=":
+        if lista[0][0] != "0" and lista[0][0] != "1" and lista[0][0] != "2" and lista[0][0] != "3" and lista[0][0] != "4" and lista[0][0] != "5" and lista[0][0] != "6" and lista[0][0] != "7" and lista[0][0] != "8" and lista[0][0] != "9":
+            return True
+        else:
+            return False
+
+def validez_sintactica(lista):
+    if len(lista) == 1:
+        if type(lista[0]) == int or type(lista[0]) == float: print "Expresión Valida"
+        else: print "Expresión Invalida"
+    elif len(lista) == 2:
+        if lista[0] == "(" and lista[1] == ")": print "Expresión Valida"
+        
 
 
 if __name__ == "__main__":
@@ -112,3 +126,11 @@ if __name__ == "__main__":
     clasf = clasifica_tokens(tokens_lista)
     for item in clasf:
         print item 
+    if len(tokens_lista) > 1:
+        if coteja_asig(tokens_lista):
+            print "Asignación Valida..."
+        else:
+            print "Asignación Invalida..."
+
+    validez_sintactica(tokens_lista)
+
