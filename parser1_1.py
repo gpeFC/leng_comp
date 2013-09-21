@@ -90,13 +90,23 @@ def coteja_asig(lista):
         else:
             return False
 
+def coteja_signo(item):
+    if item == "+" or item == "-":
+        return True
+    else:
+        return False
+
 def validez_sintactica(lista):
     if len(lista) == 1:
         if type(lista[0]) == int or type(lista[0]) == float: print "Expresión Valida"
         else: print "Expresión Invalida"
     elif len(lista) == 2:
         if lista[0] == "(" and lista[1] == ")": print "Expresión Valida"
-        
+        elif coteja_signo(lista[0]) and (type(lista[1])==int or type(lista[1])==float): print "Expresión Valida"
+    elif len(lista) == 3:
+        if coteja_asig(lista):
+            
+
 
 
 if __name__ == "__main__":
@@ -126,11 +136,6 @@ if __name__ == "__main__":
     clasf = clasifica_tokens(tokens_lista)
     for item in clasf:
         print item 
-    if len(tokens_lista) > 1:
-        if coteja_asig(tokens_lista):
-            print "Asignación Valida..."
-        else:
-            print "Asignación Invalida..."
-
+    print 
     validez_sintactica(tokens_lista)
 
