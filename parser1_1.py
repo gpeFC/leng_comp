@@ -85,7 +85,7 @@ def clasifica_tokens(lista):
 
 def coteja_asig(lista):
     if lista[1] == "=":
-        if lista[0][0] != "0" and lista[0][0] != "1" and lista[0][0] != "2" and lista[0][0] != "3" and lista[0][0] != "4" and lista[0][0] != "5" and lista[0][0] != "6" and lista[0][0] != "7" and lista[0][0] != "8" and lista[0][0] != "9":
+        if type(lista[0]) == str and (lista[0].isalnum or lista[0].isalpha) and lista[0][0] != "0" and lista[0][0] != "1" and lista[0][0] != "2" and lista[0][0] != "3" and lista[0][0] != "4" and lista[0][0] != "5" and lista[0][0] != "6" and lista[0][0] != "7" and lista[0][0] != "8" and lista[0][0] != "9" and (type(lista[2])==int or type(lista[2])==float):
             return True
         else:
             return False
@@ -103,9 +103,11 @@ def validez_sintactica(lista):
     elif len(lista) == 2:
         if lista[0] == "(" and lista[1] == ")": print "Expresión Valida"
         elif coteja_signo(lista[0]) and (type(lista[1])==int or type(lista[1])==float): print "Expresión Valida"
+        else: print "Expresión Invalida" 
     elif len(lista) == 3:
-        if coteja_asig(lista):
-            
+        if coteja_asig(lista): print "Expresión Valida"
+        else: print "Expresión Invalida"
+
 
 
 
