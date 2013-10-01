@@ -19,49 +19,7 @@
 
 print tk
 print 
-"""
-cont_p = 0
-flag_bool = True
-for idx in range(len(tk)):
-	if idx == 0 or len(tk)==1:
-		if tk[idx]=="+" or tk[idx]=="-": continue 
-		elif tk[idx]=="*" or tk[idx]=="/" or tk[idx]=="^": 
-			flag_bool = False
-			break
-		elif type(tk[idx])==int or type(tk[idx])==float: continue 
-		elif tk[idx]=="(": 
-			cont_p += 1
-			continue 
-		elif tk[idx]==")": 
-			flag_bool = False
-			break 
-	elif idx == 1 or len(tk)==2:
-		if tk[idx-1]=="(" and tk[idx]==")":	continue 
-		elif (tk[idx-1]=="+" or tk[idx-1]=="-") and (type(tk[idx])==int or type(tk[idx])==float): continue 
-		elif (idx < (len(tk)-1))
-		else: 
-			flag_bool = False
-			break 
-	elif idx == 2 or len(tk)==3:
-		if tk[idx-2]=="(" and (type(tk[idx-1])==int or type(tk[idx-1])==float) and tk[idx]==")": continue 
-		elif (type(tk[idx-2])==int or type(tk[idx-2])==float) and (tk[idx-1]=="+" or tk[idx-1]=="-" or tk[idx-1]=="*" or tk[idx-1]=="/" or tk[idx-1]=="^") and (type(tk[idx])==int or type(tk[idx])==float): continue 
-		else: 
-			flag_bool = False
-			break 
-	else:
-		if (idx < (len(tk)-1)) and (tk[idx]=="+" or tk[idx]=="-" or tk[idx]=="*" or tk[idx]=="/" or tk[idx]=="^") and (type(tk[idx-1])==int or type(tk[idx-1])==float) and (type(tk[idx+1])==int or type(tk[idx+1])==float): continue 
-		elif (idx == (len(tk)-1)) and (type(tk[idx])==int or type(tk[idx])==float) and (tk[idx-1]=="+" or tk[idx-1]=="-" or tk[idx-1]=="*" or tk[idx-1]=="/" or tk[idx-1]=="^"): continue 
-		elif (idx == (len(tk)-1)) and (tk[idx]==")") and ((type(tk[idx-1])==int or type(tk[idx-1]) or (tk[idx-1])==")")==float): 
-			continue
-			cont_p -= 1 
-		elif (idx < (len(tk)-1)) and (tk[idx]=="(") and ((tk[idx-1]=="(") or (tk[idx-1]=="+" or tk[idx-1]=="-" or tk[idx-1]=="*" or tk[idx-1]=="/" or tk[idx-1]=="^")):
-			continue
-			cont_p += 1
-		elif (idx < (len(tk)-1)) and (type(tk[idx])==int or type(tk[idx])==float) and ((tk[idx-1]=="(") or (tk[idx-1]=="+" or tk[idx-1]=="-" or tk[idx-1]=="*" or tk[idx-1]=="/" or tk[idx-1]=="^")) and ((tk[idx-1]==")") or (tk[idx+1]=="+" or tk[idx+1]=="-" or tk[idx+1]=="*" or tk[idx+1]=="/" or tk[idx+1]=="^")): continue 
-		else:
-			flag_bool = False
-			break 
-"""
+
 
 cont_p = 0
 flag_bool = True

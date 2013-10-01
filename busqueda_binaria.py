@@ -33,7 +33,7 @@ class BinarySearch:
 			num_temp = num_lista[index_temp]
 			if numero == num_temp:
 				self.valor_bool = True
-	
+
 	def resultado_busqueda(self, numero, num_lista):
 		self.buscar_numero(numero, num_lista)
 		if self.valor_bool:
@@ -43,6 +43,7 @@ class BinarySearch:
 
 if __name__ == "__main__":
 	#mi_lista_0 = [3, -5, 2, -6, 8, -9, 1, 0, -4, 7]
+	#mi_lista_0 = ["a", "hola", "5"]
 	mi_lista_0 = [3, 5, 2, 6, 8, 9, 1, 0, 4, 7]
 	print "Lista Original: ", mi_lista_0
 	nueva_busqueda = BinarySearch(mi_lista_0)
