@@ -1,0 +1,25 @@
+Parser --- Calculadora
+
+
+Tokens {
+		Parentesis(
+					"IZQ_PAR" ::= "(",
+					"DER_PAR" ::= ")"
+		),
+		Operadores(
+					"SUMA" ::= "+",
+					"RESTA" ::= "-",
+					"PRODUCTO" ::= "*",
+					"DIVISION" ::= "/"
+		),
+		Numeros(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+}
+
+Gramática {
+		<expresion> ::= <numero> | <operador_unario> <expresion> | <expresion> <operador> <expresion> | <izq_par> <expresion> <der_par>
+		<operador> ::= <+|-|*|/>
+		<izq_par> ::= <(>
+		<der_par> ::= <)>
+		<numero> ::= <0|1|2|3|4|5|6|7|8|9>
+}
+
