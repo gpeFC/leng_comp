@@ -17,6 +17,7 @@ Tokens {
 
 Gramática {
 		<expresion> ::= <numero> | <operador_unario> <expresion> | <expresion> <operador> <expresion> | <izq_par> <expresion> <der_par>
+		<operador_unario> ::= <+|->
 		<operador> ::= <+|-|*|/>
 		<izq_par> ::= <(>
 		<der_par> ::= <)>
