@@ -11,7 +11,6 @@
 
 
     # Modulos importados.
-import re
 
 
 
