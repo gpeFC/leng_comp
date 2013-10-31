@@ -2,25 +2,50 @@ Parser --- Calculadora
 
 
 Tokens {
-		Parentesis(
-					"IZQ_PAR" ::= "(",
-					"DER_PAR" ::= ")"
-		),
-		Operadores(
-					"SUMA" ::= "+",
-					"RESTA" ::= "-",
-					"PRODUCTO" ::= "*",
-					"DIVISION" ::= "/"
-		),
-		Numeros(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+        
+        Unarios:
+                (SUMA   ==>  "+")
+                (RESTA  ==>  "-")
+        
+        Operadores:
+                   (SUMA        ==> "+")
+                   (RESTA       ==> "-")
+                   (PRODUCTO    ==> "*")
+                   (DIVISION    ==> "/")
+                   (MODULO      ==> "%")
+                   (POTENCIA    ==> "^")
+                   (ASIGNACION  ==> "=")
+        
+        Delimitadores:
+                      (IZQ_PAR    ==> "(")
+                      (DER_PAR    ==> ")")
+                      (IZQ_COR    ==> "[")
+                      (DER_COR    ==> "]")
+                      (IZQ_LLAVE  ==> "{")
+                      (DER_LLAVE  ==> "}")
+        
+        Variables: ([a-z][A-Z][0-9])
+        
+        Numeros: ([0-9][","|"."][0-9])
+        
 }
 
 Gramática {
-		<expresion> ::= <numero> | <operador_unario> <expresion> | <expresion> <operador> <expresion> | <izq_par> <expresion> <der_par>
-		<operador_unario> ::= <+|->
-		<operador> ::= <+|-|*|/>
-		<izq_par> ::= <(>
-		<der_par> ::= <)>
-		<numero> ::= <0|1|2|3|4|5|6|7|8|9>
+           <asignacion> ::= <var> <"="> <expr>
+           
+           <expresion> ::= <num> | <var> | <expr> <oper> <expr> | <del_izq> <expr> <del_der> | <unar> <expr>
+           
+           <unario> ::= <"+"|"-">
+           
+           <operador> ::= <"+"|"-"|"*"|"/"|"%"|"^">
+           
+           <delimitador_izquierdo> ::= <"("|"["|"{">
+           
+           <delimitador_derecho> ::= <")"|"]"|"}">
+           
+           <variable> ::= <a-z<A-Z|0-9>>
+           
+           <numero> ::= <0-9> <sepr> <0-9>
+           
+           <separador> ::= <","|".">
 }
-
