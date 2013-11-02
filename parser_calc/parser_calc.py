@@ -58,6 +58,7 @@ class Parser:
         """ Método que clasifica los tokens contenidos en la cadena evaluada segun su categoría. """
         for token in self.__lista_tokens:
             if token.isdigit():
+                pass 
 
     
     def imprime_datos(self):
