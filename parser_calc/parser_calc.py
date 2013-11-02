@@ -33,7 +33,7 @@ class Parser:
             temp_token = "" # Cadena temporal para ir capturando los simbolos (letras, numeros, puntos, comas) integran cada token.
             cadena = lista[idx_1] # Cadena temporal para guardar cada palabra encontrada en la primera lista generada por la cadena evaluada.
             for idx_2 in range(len(cadena)): # Bucle para identificar y separar los tokens contenidos en la cadena evaluada. 
-                if cadena[idx_2] == "(" or cadena[idx_2] == ")" or cadena[idx_2] == "[" or cadena[idx_2] == "]" or cadena[idx_2] == "{" or cadena[idx_2] == "}": # Condicion que identifica los tokens 'delimitadores'.
+                if cadena[idx_2] == "(" or cadena[idx_2] == ")": # Condicion que identifica los tokens 'delimitadores'.
                     temp_lista.append(cadena[idx_2]) # Anexo del token 'delimitador' a la lista temporal (local al bucle).
                 elif cadena[idx_2] == "," or cadena[idx_2] == "." or cadena[idx_2] == "0" or cadena[idx_2] == "1" or cadena[idx_2] == "2" or cadena[idx_2] == "3" or cadena[idx_2] == "4" or cadena[idx_2] == "5" or cadena[idx_2] == "6" or cadena[idx_2] == "7" or cadena[idx_2] == "8" or cadena[idx_2] == "9": # Condicion que identifica los tokens 'numeros'.
                     temp_token += cadena[idx_2] # Concatenacion de simbolos para obtener el token 'numero'.
