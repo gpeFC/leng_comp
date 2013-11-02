@@ -74,7 +74,15 @@ class Parser:
         """ Método que muestra en la pantalla los datos actuales del Parser. """
         print "Cadena Evaluada: ", self.__cadena_ingresada
         print "Lista de Tokens: ", self.__lista_tokens
-        print "Diccionario de Tokens: ", self.__dicc_tokens
+        print "Diccionario de Tokens: " 
+        for item in self.__dicc_tokens.items():
+            print item[0] + "{",
+            for itm in item[1]:
+                if len(item[1]) > 1:
+                    print itm, "|",
+                else:
+                    print itm,
+            print "}"
 
 
 
