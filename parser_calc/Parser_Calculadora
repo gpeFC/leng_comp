@@ -19,10 +19,6 @@ Tokens {
         Delimitadores:
                       (IZQ_PAR    ==> "(")
                       (DER_PAR    ==> ")")
-                      (IZQ_COR    ==> "[")
-                      (DER_COR    ==> "]")
-                      (IZQ_LLAVE  ==> "{")
-                      (DER_LLAVE  ==> "}")
         
         Variables: ([a-z][A-Z][0-9])
         
@@ -39,11 +35,11 @@ Gramática {
            
            <operador> ::= <"+"|"-"|"*"|"/"|"%"|"^">
            
-           <delimitador_izquierdo> ::= <"("|"["|"{">
+           <delimitador_izquierdo> ::= <"(">
            
-           <delimitador_derecho> ::= <")"|"]"|"}">
+           <delimitador_derecho> ::= <")">
            
-           <variable> ::= <a-z<A-Z|0-9>>
+           <variable> ::= <a-z{A-Z|0-9}>
            
            <numero> ::= <0-9> <sepr> <0-9>
            
