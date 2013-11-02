@@ -22,11 +22,11 @@ class Parser:
         """ Método Constructor de la Clase. """
         self.__cadena_ingresada = cadena # Cadena a evaluar (parsear) ingresada por el usuario.
         self.__lista_tokens = [] # Lista que almacenará los tokens contenidos en la cadena evaluada.
-        self.__dicc_tokens = {} # Diccionario que guardará los tokens clasificados.
-        self.__tupla_lexemas = ('NUMERO', 'VARIABLE', 'DELIMITADOR', 'OPERADOR', 'OTRO') # Tupla que contiene los lexemas posibles.
+        self.__dicc_tokens = {'NUMERO':[], 'VARIABLE':[], 'DELIMITADOR':[], 'OPERADOR':[], 'OTRO':[]} # Diccionario que guardará los tokens clasificados.
+        
     
     def separa_tokens(self):
-        """ Método que identifica y separa todos los tokens que componen la cadenada evaluada."""
+        """ Método que identifica y separa todos los tokens que componen la cadenada evaluada. """
         lista = self.__cadena_ingresada.split(" ") # Primera lista que segmenta la cadena evaluada por espacios en blanco.
         nueva_lista = [] # Lista temporal para almacenar los tokens que se encuentran en la cadena evaluada.
         for idx_1 in range(len(lista)): # Bucle para buscar los tokens en la cadena evaluada.
@@ -56,12 +56,13 @@ class Parser:
     
     def clasifica_tokens(self):
         """ Método que clasifica los tokens contenidos en la cadena evaluada segun su categoría. """
-        pass 
+        for token in self.__lista_tokens:
+            if token.isdigit():
+
     
     def imprime_datos(self):
-        """ Método que muestra en la pantalla los datos actuales del Parser."""
+        """ Método que muestra en la pantalla los datos actuales del Parser. """
         print "Cadena Evaluada: ", self.__cadena_ingresada
-        print "Lexemas del Parser: ", self.__tupla_lexemas
         print "Lista de Tokens: ", self.__lista_tokens
         print "Diccionario de Tokens: ", self.__dicc_tokens
 
