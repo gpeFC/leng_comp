@@ -57,8 +57,17 @@ class Parser:
     def clasifica_tokens(self):
         """ Método que clasifica los tokens contenidos en la cadena evaluada segun su categoría. """
         for token in self.__lista_tokens:
-            if token.isdigit():
-                pass 
+            if token.isdigit() or re.match('[0-9,.0-9]', token):
+                self.__dicc_tokens['NUMERO'].append(token)
+            elif re.match('[a-zA-Z0-9]', token):
+                self.__dicc_tokens['VARIABLE'].append(token)
+            elif re.match('\(|\)', token):
+                self.__dicc_tokens['DELIMITADOR'].append(token)
+            elif re.match('\+|\-|\*|\/|\%|\^|\=', token):
+                self.__dicc_tokens['OPERADOR'].append(token)
+            else:
+                self.__dicc_tokens['OTRO'].append(token)
+
 
     
     def imprime_datos(self):
@@ -78,6 +87,7 @@ if __name__ == "__main__":
     
     parser = Parser(mi_cadena)
     parser.separa_tokens()
+    parser.clasifica_tokens()
     parser.imprime_datos()
     
     print 
