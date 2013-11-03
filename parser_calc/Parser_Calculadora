@@ -41,7 +41,7 @@ Gramática {
            
            <variable> ::= <a-z{A-Z|0-9}>
            
-           <numero> ::= <0-9> <sepr> <0-9>
+           <numero> ::= <0-9> {<sepr> <0-9>}
            
            <separador> ::= <","|".">
 }

@@ -21,7 +21,7 @@ class Parser:
     def __init__(self, cadena):
         """ Método Constructor de la Clase. """
         self.__cadena_ingresada = cadena # Cadena a evaluar (parsear) ingresada por el usuario.
-        self.__lista_tokens = [] # Lista que almacenará los tokens contenidos en la cadena evaluada.
+        self.__lista_lexemas = [] # Lista que almacenará los tokens contenidos en la cadena evaluada.
         self.__dicc_tokens = {'NUMERO':[], 'VARIABLE':[], 'DELIMITADOR':[], 'OPERADOR':[], 'OTRO':[]} # Diccionario que guardará los tokens clasificados.
         
     
@@ -52,11 +52,11 @@ class Parser:
             nueva_lista += temp_lista # Anexo de los tokens contenidos en la lista temporal (local al bucle) a la lista temporal de tokens.
         for token in nueva_lista: # Bucle para obtener la lista final de tokens de la cadena evaluada, excluyendo los tokens nulos.
             if len(token) != 0: # Condicion para identificar los tokens no nulos.
-                self.__lista_tokens.append(token) # Anexo de los tokens a la lista final de tokens
+                self.__lista_lexemas.append(token) # Anexo de los tokens a la lista final de tokens
     
     def clasifica_tokens(self):
         """ Método que clasifica los tokens contenidos en la cadena evaluada segun su categoría. """
-        for token in self.__lista_tokens:
+        for token in self.__lista_lexemas:
             if token.isdigit() or re.match('[0-9,.0-9]', token):
                 self.__dicc_tokens['NUMERO'].append(token)
             elif re.match('[a-zA-Z0-9]', token):
@@ -73,7 +73,7 @@ class Parser:
     def imprime_datos(self):
         """ Método que muestra en la pantalla los datos actuales del Parser. """
         print "Cadena Evaluada: ", self.__cadena_ingresada
-        print "Lista de Tokens: ", self.__lista_tokens
+        print "Lista de Lexemas: ", self.__lista_lexemas
         print "Diccionario de Tokens: " 
         for item in self.__dicc_tokens.items():
             print item[0] + "{",
