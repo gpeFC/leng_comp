@@ -42,9 +42,9 @@ class BinarySearch:
 			return False
 
 if __name__ == "__main__":
-	#mi_lista_0 = [3, -5, 2, -6, 8, -9, 1, 0, -4, 7]
+	mi_lista_0 = [3, -5, 2, -6, 8, -9, 1, 0, -4, 7]
 	#mi_lista_0 = ["a", "hola", "5"]
-	mi_lista_0 = [3, 5, 2, 6, 8, 9, 1, 0, 4, 7]
+	#mi_lista_0 = [3, 5, 2, 6, 8, 9, 1, 0, 4, 7]
 	print "Lista Original: ", mi_lista_0
 	nueva_busqueda = BinarySearch(mi_lista_0)
 	nueva_busqueda.ordena_vector(mi_lista_0)
