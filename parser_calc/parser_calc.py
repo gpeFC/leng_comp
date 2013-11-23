@@ -23,8 +23,8 @@ class Parser:
         self.cadena_ingresada = cadena # Cadena a evaluar (parsear) ingresada por el usuario.
         self.lista_lexemas = [] # Lista que almacenará los tokens contenidos en la cadena evaluada.
         self.dicc_tokens = {'NUMERO':[], 'VARIABLE':[], 'DELIMITADOR':[], 'OPERADOR':[], 'OTRO':[]} # Diccionario que guardará los tokens clasificados.
-        
-    
+        self.valor_gramatica = False
+
     def separa_tokens(self):
         """ Método que identifica y separa todos los tokens que componen la cadenada evaluada. """
         lista = self.cadena_ingresada.split(" ") # Primera lista que segmenta la cadena evaluada por espacios en blanco.
@@ -48,27 +48,63 @@ class Parser:
                         temp_token = "" # Limpieza de la cadena temporal que captura los simbolos (letras, numeros, puntos, comas) que integran cada token.
                 elif cadena[idx_2] == "=" or cadena[idx_2] == "+" or cadena[idx_2] == "-" or cadena[idx_2] == "*" or cadena[idx_2] == "/" or cadena[idx_2] == "%" or cadena[idx_2] == "^": # Condicion que identifica los tokens 'operadores'.
                     temp_lista.append(cadena[idx_2]) # Anexo del token 'operador' a la lista temporal (local al bucle).
+                else:
+                    temp_token += cadena[idx_2]
             temp_lista.append(temp_token) # Anexo de token arbitrario a la lista temporal (local al bucle).
             nueva_lista += temp_lista # Anexo de los tokens contenidos en la lista temporal (local al bucle) a la lista temporal de tokens.
         for token in nueva_lista: # Bucle para obtener la lista final de tokens de la cadena evaluada, excluyendo los tokens nulos.
             if len(token) != 0: # Condicion para identificar los tokens no nulos.
                 self.lista_lexemas.append(token) # Anexo de los tokens a la lista final de tokens
-    
+
     def clasifica_tokens(self):
-        """ Método que clasifica los tokens contenidos en la cadena evaluada segun su categoría. """
-        for token in self.lista_lexemas:
-            if token.isdigit() or re.match('[0-9,.0-9]', token):
-                self.dicc_tokens['NUMERO'].append(token)
-            elif re.match('[a-zA-Z0-9]', token):
-                self.dicc_tokens['VARIABLE'].append(token)
-            elif re.match('\(|\)', token):
-                self.dicc_tokens['DELIMITADOR'].append(token)
-            elif re.match('\+|\-|\*|\/|\%|\^|\=', token):
-                self.dicc_tokens['OPERADOR'].append(token)
+        """ Método que clasifica los tokens segun su categoría. """
+        for lexema in self.lista_lexemas:
+            if re.match(r'(\(|\))', lexema):
+                self.dicc_tokens['DELIMITADOR'].append(lexema)
+            elif re.match(r'(\+|\-|\*|\/|\%|\^|\=)', lexema):
+                self.dicc_tokens['OPERADOR'].append(lexema)
+            elif re.match(r'(\d+([,.]\d*)?|[,.]\d+)$', lexema):
+                self.dicc_tokens['NUMERO'].append(lexema)
+            elif re.match(r'[a-z_]\w*', lexema):
+                self.dicc_tokens['VARIABLE'].append(lexema)
             else:
-                self.dicc_tokens['OTRO'].append(token)
+                self.dicc_tokens['OTRO'].append(lexema)
 
+    def verifica_gramatica(self):
+        """ Método que verifica si la expresion evaluada cumple la gramática definida para el Parser. """
+        self.gramatica_expresion()
 
+    def gramatica_asignacion(self):
+        """ Método que verifica la gramática para una asignación. """
+        pass
+
+    def gramatica_expresion(self):
+        """ Método que verifica la gramática para una expresión. """
+        if len(self.lista_lexemas) == 1:
+            if self.expresion_0(self.lista_lexemas[0]) or self.expresion_1(self.lista_lexemas[0]):
+                return True
+        elif 1:
+            pass 
+
+    def expresion_0(self, lexema):
+        if re.match(r'(\d+([,.]\d*)?|[,.]\d+)$', lexema):
+            self.valor_gramatica = True
+            return True
+
+    def expresion_1(self, lexema):
+        if re.match(r'[a-z_]\w*', lexema):
+            self.valor_gramatica = True
+            return True
+
+    def expresion_2(self, lexemas):
+        for lexema in lexemas:
+            pass
+
+    def expresion_3(self):
+        pass
+
+    def expresion_4(self):
+        pass
     
     def imprime_datos(self):
         """ Método que muestra en la pantalla los datos actuales del Parser. """
@@ -83,6 +119,8 @@ class Parser:
                 else:
                     print itm,
             print "}"
+        #print self.dicc_tokens
+        print "Valor Gramática: ", self.valor_gramatica
 
 
 
@@ -96,6 +134,7 @@ if __name__ == "__main__":
     parser = Parser(mi_cadena)
     parser.separa_tokens()
     parser.clasifica_tokens()
+    parser.verifica_gramatica()
     parser.imprime_datos()
     
     print 
