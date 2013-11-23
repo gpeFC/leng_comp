@@ -1,0 +1,25 @@
+	Departamental "Lenguajes y Compiladores"
+
+
+Definición de Compilador (2 punto).
+
+Definición de Análisis Léxico (2 punto).
+
+Definición de Análisis Sintáctico (2 punto).
+
+Definición de análisis Semántico (2 punto).
+
+Sea Σ={a,b} el alfabeto, describa que cadenas producen las siguientes expresiones: a|b, (a|b)
+(a|b), a*, (a|b)* , a|a*b (3 puntos).
+
+Los números sin signo en Pascal son cadenas como: 5280, 39.37, 6.336E4, 1.894E-4, construya 
+la definición regular para proporcionar una especificación precisa para esta clase de cadenas 
+y dibuje los diagramas de transiciones para reconocerlos (6 puntos).
+
+Construya un AFN que acepte la siguiente expresión:(a|b)*abb (6 puntos).
+
+Quitar la recursividad por la izquierda.
+
+Hacer BNF del siguiente codigo:
+
+Explicar dibujo: Pila, var locales, var gloables, codigo.
